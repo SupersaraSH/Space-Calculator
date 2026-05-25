@@ -521,8 +521,12 @@
     </main>
 
   <script>
-    window.addEventListener('load', function () {
+    function sendHeight() {
       window.parent.postMessage({ iframeHeight: document.documentElement.scrollHeight }, '*');
+    }
+    window.addEventListener('load', sendHeight);
+    window.addEventListener('message', function (e) {
+      if (e.data === 'getHeight') sendHeight();
     });
   </script>
   </body>
