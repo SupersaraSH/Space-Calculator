@@ -520,6 +520,11 @@
       </section>
     </main>
 
+  <script>
+    window.addEventListener('load', function () {
+      window.parent.postMessage({ iframeHeight: document.documentElement.scrollHeight }, '*');
+    });
+  </script>
   </body>
 
 </html>
